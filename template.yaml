@@ -1,0 +1,24 @@
+name: hotel-cs
+description: ClawLite template for Hotel Customer Service agent
+version: 1.0.0
+author: aisyahsyihab
+
+variables:
+  - name: HOTEL_NAME
+    prompt: "Hotel name?"
+    default: "Grand Hotel"
+  - name: HOTEL_ADDRESS
+    prompt: "Hotel address?"
+    default: "Jl. Example No. 456, Yogyakarta"
+  - name: HOTEL_PHONE
+    prompt: "Hotel phone?"
+    default: "+62274123456"
+  - name: HOTEL_STARS
+    prompt: "Hotel star rating (1-5)?"
+    default: "3"
+  - name: CHECK_IN_TIME
+    prompt: "Check-in time?"
+    default: "14:00"
+  - name: CHECK_OUT_TIME
+    prompt: "Check-out time?"
+    default: "12:00"
