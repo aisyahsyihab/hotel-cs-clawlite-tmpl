@@ -1,0 +1,42 @@
+# ClawLite Configuration for Hotel CS Template
+# Copy this to config.yaml and customize
+
+llm:
+  provider: openrouter  # or 'ollama'
+  # OpenRouter settings
+  openrouter_model: google/gemini-2.0-flash-001
+  # Ollama settings (if using ollama)
+  # ollama_host: http://localhost:11434
+  # ollama_model: llama3.2:3b
+
+agent:
+  max_iterations: 10
+  tool_timeout: 30
+  total_timeout: 300
+
+tools:
+  allowed:
+    - read_file
+    - write_file
+    - list_dir
+    - find_files
+    - memory_log
+    - memory_read
+    - memory_write
+    - memory_update
+    - user_update
+
+access:
+  # Empty = all users allowed, list = only those users
+  allowed_users: []
+  # Additional admins (owner is always admin)
+  admins: []
+
+channels:
+  telegram:
+    enabled: true
+  whatsapp:
+    enabled: false
+
+logging:
+  level: INFO

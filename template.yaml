@@ -22,3 +22,16 @@ variables:
   - name: CHECK_OUT_TIME
     prompt: "Check-out time?"
     default: "12:00"
+  - name: TELEGRAM_TOKEN
+    prompt: "Telegram bot token?"
+    secret: true
+  - name: OPENROUTER_API_KEY
+    prompt: "OpenRouter API key?"
+    secret: true
+
+files:
+  - workspace/SOUL.md
+  - workspace/AGENTS.md
+  - workspace/TOOLS.md
+  - .env.example
+  - config-example.yaml
