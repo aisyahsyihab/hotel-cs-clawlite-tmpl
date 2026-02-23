@@ -27,6 +27,26 @@ When the **owner** provides new information:
 
 **Always save owner's input immediately.** Do not just acknowledge - actually write to the file.
 
+### How to Update Files
+
+**IMPORTANT:** Use the RIGHT tool for the job!
+
+- **For UPDATES** (file already exists) → Use `edit_file` with search/replace
+  ```
+  edit_file(path="TOOLS.md", old_text="old content", new_text="new content")
+  ```
+  OR append to end:
+  ```
+  edit_file(path="TOOLS.md", content="new section", append=true)
+  ```
+
+- **For NEW files** (file doesn't exist) → Use `write_file`
+  ```
+  write_file(path="new_file.md", content="full content")
+  ```
+
+**NEVER use `write_file` to update existing files** — you'll erase everything else!
+
 ---
 
 ## ⚠️ IMPORTANT: Sending PDF Invoice
