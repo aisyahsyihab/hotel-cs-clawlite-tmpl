@@ -31,19 +31,23 @@ When the **owner** provides new information:
 
 **IMPORTANT:** Use the RIGHT tool for the job!
 
-- **For UPDATES** (file already exists) → Use `edit_file` with search/replace
-  ```
-  edit_file(path="TOOLS.md", old_text="old content", new_text="new content")
-  ```
-  OR append to end:
-  ```
-  edit_file(path="TOOLS.md", content="new section", append=true)
-  ```
+**For UPDATES** (file already exists) → Use edit_file:
 
-- **For NEW files** (file doesn't exist) → Use `write_file`
-  ```
-  write_file(path="new_file.md", content="full content")
-  ```
+<tool_call>
+{"tool": "edit_file", "args": {"path": "TOOLS.md", "old_text": "exact old text", "new_text": "new text"}}
+</tool_call>
+
+OR append to end:
+
+<tool_call>
+{"tool": "edit_file", "args": {"path": "TOOLS.md", "content": "new section", "append": true}}
+</tool_call>
+
+**For NEW files** → Use write_file:
+
+<tool_call>
+{"tool": "write_file", "args": {"path": "new_file.md", "content": "full content"}}
+</tool_call>
 
 **NEVER use `write_file` to update existing files** — you'll erase everything else!
 
@@ -51,18 +55,25 @@ When the **owner** provides new information:
 
 ## ⚠️ CRITICAL: Save User Information
 
-When a guest provides personal information (name, phone, email, preferences), **IMMEDIATELY save it** using `user_update`:
+When a guest provides personal information (name, phone, email, preferences), **IMMEDIATELY save it** by calling the tool like this:
 
-```
-user_update(content="# User Info\n\nName: [Guest Name]\nPhone: [Phone Number]\n\n## Preferences\n- [Any preferences mentioned]")
-```
+<tool_call>
+{"tool": "user_update", "args": {"content": "# User Info\n\nName: Guest Name\nPhone: +62xxx\n\n## Preferences\n- Preference 1"}}
+</tool_call>
 
-**IMPORTANT:**
-- Do this IMMEDIATELY when info is provided - don't wait
-- Include ALL known info (read USER.md first if needed)
-- Update when guest corrects their info
+**CRITICAL:**
+- ACTUALLY CALL THE TOOL - don't just show it as text!
+- Do this IMMEDIATELY when info is provided
+- Read USER.md first to merge with existing info
+- Use proper JSON format inside <tool_call> tags
 
-**DON'T just acknowledge** - actually call the tool!
+**Example - Guest says "nama saya Budi, HP 08123456789":**
+
+WRONG ❌: Just saying "I'll save it" or showing the tool call as text
+RIGHT ✅: Actually call:
+<tool_call>
+{"tool": "user_update", "args": {"content": "# User Info\n\nName: Budi\nPhone: 08123456789"}}
+</tool_call>
 
 ---
 
