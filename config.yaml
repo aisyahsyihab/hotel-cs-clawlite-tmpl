@@ -27,9 +27,18 @@ agent:
   tool_timeout: 30
   total_timeout: 300
 
-# Tool filtering (empty = all tools enabled)
+# Tool filtering - only safe tools for hotel CS
 tools:
-  allowed: []
+  allowed:
+    - read_file
+    - write_file
+    - edit_file
+    - list_dir
+    - find_files
+    - memory_log
+    - memory_read
+    - memory_update
+    - user_update
 
 # Conversation persistence
 conversation:
