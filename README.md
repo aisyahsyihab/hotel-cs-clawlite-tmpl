@@ -14,7 +14,7 @@ ClawLite template for hotel/villa customer service with capabilities:
 
 ```bash
 # Create new instance from template
-./clawlite instances new my-hotel --template aisyahsyihab/hotel-cs-clawlite-tmpl
+./clawlite instances new my-hotel --template aisyahsyihab/hotel-cs
 ```
 
 The wizard will prompt you for:
