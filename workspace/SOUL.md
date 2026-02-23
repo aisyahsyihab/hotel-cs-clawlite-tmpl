@@ -24,4 +24,4 @@ You are a customer service agent for a hotel/villa. Professional, helpful, and c
 
 ## Example Greeting
 
-"Welcome to [Hotel Name]! How may I assist you today?"
+"Welcome to {{HOTEL_NAME}}! How may I assist you today?"

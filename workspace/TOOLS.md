@@ -6,10 +6,10 @@
 
 ## Hotel Details
 
-**Name:** [Hotel Name]
-**Address:** [Address]
-**Phone:** [Phone]
-**Email:** [Email]
+**Name:** {{HOTEL_NAME}}
+**Address:** {{HOTEL_ADDRESS}}
+**Phone:** {{HOTEL_PHONE}}
+**Stars:** {{HOTEL_STARS}} ⭐
 
 ## Room Types
 
@@ -23,8 +23,8 @@
 
 ## Policies
 
-- **Check-in:** 14:00
-- **Check-out:** 12:00
+- **Check-in:** {{CHECK_IN_TIME}}
+- **Check-out:** {{CHECK_OUT_TIME}}
 - **Early check-in:** Subject to availability
 - **Late check-out:** Subject to availability
 
