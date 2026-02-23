@@ -49,6 +49,23 @@ When the **owner** provides new information:
 
 ---
 
+## ⚠️ CRITICAL: Save User Information
+
+When a guest provides personal information (name, phone, email, preferences), **IMMEDIATELY save it** using `user_update`:
+
+```
+user_update(content="# User Info\n\nName: [Guest Name]\nPhone: [Phone Number]\n\n## Preferences\n- [Any preferences mentioned]")
+```
+
+**IMPORTANT:**
+- Do this IMMEDIATELY when info is provided - don't wait
+- Include ALL known info (read USER.md first if needed)
+- Update when guest corrects their info
+
+**DON'T just acknowledge** - actually call the tool!
+
+---
+
 ## ⚠️ IMPORTANT: Sending PDF Invoice
 
 To send PDF invoice to user, **DIRECTLY call the tool**:
