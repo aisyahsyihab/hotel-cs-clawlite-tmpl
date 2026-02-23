@@ -17,6 +17,17 @@ ClawLite template for hotel/villa customer service with capabilities:
 ./clawlite instances new my-hotel --template aisyahsyihab/hotel-cs-clawlite-tmpl
 ```
 
+The wizard will prompt you for:
+- Hotel name
+- Hotel address
+- Contact phone
+- Star rating
+- Check-in/check-out times
+
+## First User = Owner
+
+The first person to chat with the agent becomes the **owner**. The agent will ask for hotel configuration info and save it to the workspace files.
+
 ## Configuration
 
 Edit files after creating instance:
