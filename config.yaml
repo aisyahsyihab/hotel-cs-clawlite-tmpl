@@ -1,0 +1,45 @@
+# ClawLite Configuration - Hotel CS Template
+# All settings here, secrets go in .env
+
+# LLM settings (API keys in .env)
+llm:
+  provider: openrouter  # ollama | openrouter | anthropic
+  model: google/gemini-2.0-flash-001
+  # host: http://localhost:11434  # for ollama only
+  timeout: 60
+
+# Access control
+access:
+  allowed_users: []  # empty = everyone, list = only those
+  admins: []  # bypass all restrictions
+
+# Channel settings
+channels:
+  telegram:
+    enabled: true
+  whatsapp:
+    enabled: false
+    session_dir: /data/whatsapp
+
+# Agent behavior
+agent:
+  max_iterations: 10
+  tool_timeout: 30
+  total_timeout: 300
+
+# Tool filtering (empty = all tools enabled)
+tools:
+  allowed: []
+
+# Conversation persistence
+conversation:
+  record: true
+  retention_days: 7
+
+# API server
+api:
+  port: 8080
+
+# Logging
+logging:
+  level: INFO

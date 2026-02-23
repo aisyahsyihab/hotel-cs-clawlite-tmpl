@@ -60,11 +60,16 @@ hotel-cs-clawlite-tmpl/
 │   ├── SOUL.md      # Agent persona
 │   ├── AGENTS.md    # Rules & workflow
 │   └── TOOLS.md     # Hotel config & prices
-├── config-example.yaml
-├── .env.example
-├── template.yaml
+├── config.yaml      # Main config (no secrets)
+├── .env.example     # Secrets template
+├── template.yaml    # Template variables
 └── README.md
 ```
+
+## Configuration
+
+- **config.yaml** - All settings (LLM, channels, access, etc.)
+- **.env** - Secrets only (API keys, tokens)
 
 ## Key Rules
 
@@ -86,5 +91,6 @@ Guest → Ask room/price → get_prices()
 1. Edit `workspace/SOUL.md` for personality/greeting
 2. Edit `workspace/TOOLS.md` for room types, prices, services
 3. Edit `workspace/AGENTS.md` for workflow rules
-4. Replace placeholder `[Hotel Name]` etc. with actual values
-5. Replace `NOT SET` prices with actual prices
+4. Replace `NOT SET` prices with actual prices
+
+**Note:** Template variables like `{{HOTEL_NAME}}` are automatically replaced during instance creation.

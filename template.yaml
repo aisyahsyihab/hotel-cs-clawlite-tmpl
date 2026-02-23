@@ -34,4 +34,4 @@ files:
   - workspace/AGENTS.md
   - workspace/TOOLS.md
   - .env.example
-  - config-example.yaml
+  - config.yaml
