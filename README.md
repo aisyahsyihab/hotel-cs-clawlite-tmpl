@@ -1,59 +1,79 @@
-# Hotel Customer Service - ClawLite Template
+# Hotel CS ClawLite Template
 
-ClawLite template for creating a Hotel Customer Service agent.
+ClawLite template for hotel/villa customer service with capabilities:
+- Reservations & bookings
+- Invoice creation & PDF delivery
+- Room pricing information
 
-## Features
+## Requirements
 
-- 🏨 Room and hotel facility information
-- 💰 Pricing and reservation assistance
-- 🛎️ Hotel services information
-- 📍 Nearby attractions info
-- 🌐 Bilingual support (Indonesian/English)
+- Invoice skill (e.g., `krasan_invoice` or custom)
+- Backend system (e.g., Frappe/ERPNext)
 
-## Usage
+## Quick Start
 
 ```bash
-clawlite instances new aisyahsyihab/hotel-cs my-hotel-agent
+# Create new instance from template
+./clawlite instances new my-hotel --template aisyahsyihab/hotel-cs-clawlite-tmpl
 ```
-
-The wizard will prompt you for:
-- Hotel name
-- Hotel address
-- Contact phone
-- Star rating
-- Check-in/check-out times
 
 ## Configuration
 
-After instance creation, edit:
+Edit files after creating instance:
 
-1. **`.env`** - Add your API keys (copy from `.env.example`)
-2. **`workspace/TOOLS.md`** - Update room rates, facilities, policies
-3. **`workspace/SOUL.md`** - Customize persona if needed
-4. **`workspace/AGENTS.md`** - Adjust response formats if needed
+1. **workspace/SOUL.md** - Hotel name and personality
+2. **workspace/TOOLS.md** - Room types, prices, policies
+3. **workspace/AGENTS.md** - Specific rules if needed
 
-## Start the Agent
+## Important: Set Timezone
 
-```bash
-clawlite instances start my-hotel-agent
-```
-
-## Template Structure
+Add to container environment to fix time-based greetings:
 
 ```
-workspace/
-├── SOUL.md     # Agent persona and communication style
-├── AGENTS.md   # Rules, response formats, escalation matrix
-└── TOOLS.md    # Hotel info (rooms, rates, facilities, policies)
+TZ=Asia/Jakarta
 ```
 
-## Suitable For
+Without this, greetings will use UTC and be wrong for local time.
 
-- Hotels (1-5 stars)
-- Boutique hotels
-- Serviced apartments
-- Guest houses
+## Recommended Model
 
-## License
+- **Production:** Qwen3-8B (reliable, efficient)
+- **Budget:** Qwen3-4B (lighter, still capable)
+- **Premium:** Qwen3-14B (best accuracy)
 
-MIT
+## Files
+
+```
+hotel-cs-clawlite-tmpl/
+├── workspace/
+│   ├── SOUL.md      # Agent persona
+│   ├── AGENTS.md    # Rules & workflow
+│   └── TOOLS.md     # Hotel config & prices
+├── config-example.yaml
+├── .env.example
+├── template.yaml
+└── README.md
+```
+
+## Key Rules
+
+1. **Never make up prices** - Only quote what's in TOOLS.md
+2. **Update files when owner provides info** - Save immediately
+3. **PDF sending** - Use get_pdf tool, it sends automatically
+4. **Draft first** - Always create invoice as draft, confirm, then submit
+
+## Workflow
+
+```
+Guest → Ask room/price → get_prices()
+      → Want to book → collect info → create_invoice()
+      → Confirm → approve → submit_invoice() → get_pdf()
+```
+
+## Customization
+
+1. Edit `workspace/SOUL.md` for personality/greeting
+2. Edit `workspace/TOOLS.md` for room types, prices, services
+3. Edit `workspace/AGENTS.md` for workflow rules
+4. Replace placeholder `[Hotel Name]` etc. with actual values
+5. Replace `NOT SET` prices with actual prices
