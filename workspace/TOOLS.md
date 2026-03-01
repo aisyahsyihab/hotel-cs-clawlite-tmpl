@@ -51,6 +51,7 @@ Untuk kirim file (invoice PDF, dll) ke user:
 </example>
 </send-file>
 
+<role:admin>
 <calendar>
 ## Google Calendar (Reservasi)
 
@@ -103,3 +104,4 @@ krasan-admin calendar add \
 </tool_call>
 </example>
 </calendar>
+</role:admin>
