@@ -13,6 +13,9 @@ variables:
   - name: HOTEL_PHONE
     prompt: "Hotel phone?"
     default: "+62274123456"
+  - name: HOTEL_EMAIL
+    prompt: "Hotel email?"
+    default: "info@hotel.com"
   - name: HOTEL_STARS
     prompt: "Hotel star rating (1-5)?"
     default: "3"

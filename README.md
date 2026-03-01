@@ -1,6 +1,6 @@
-# Hotel CS ClawLite Template
+# Krasan Villa CS ClawLite Template
 
-ClawLite template for hotel/villa customer service with capabilities:
+ClawLite template for villa customer service with capabilities:
 - Reservations & bookings
 - Invoice creation & PDF delivery
 - Room pricing information
@@ -60,6 +60,7 @@ hotel-cs-clawlite-tmpl/
 │   ├── SOUL.md      # Agent persona
 │   ├── AGENTS.md    # Rules & workflow
 │   └── TOOLS.md     # Hotel config & prices
+├── bin/             # Supporting program
 ├── config.yaml      # Main config (no secrets)
 ├── .env.example     # Secrets template
 ├── template.yaml    # Template variables
