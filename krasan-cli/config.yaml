@@ -1,0 +1,9 @@
+# Krasan CLI Configuration
+# You can use this file to configure global overrides for the application.
+
+# Absolute path to your persistent SQLite data file
+database: "/workspace/krasan.db"
+output_format: "json"
+
+# Minimum down payment percentage for price calculations
+min_dp_percentage: 30.0
